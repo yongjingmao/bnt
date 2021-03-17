@@ -25,7 +25,7 @@ for m=1:ncases
   % specify (as a bit vector) which elements in the family domain are hidden
   hidden_bitv = zeros(1, max(fmarginal.domain));
   ev = cases(:,m);
-  hidden_bitv(find(isempty(evidence)))=1;
+  hidden_bitv(find(isempty(ev)))=1;
   CPD = update_ess(CPD, fmarginal, ev, ns, cnodes, hidden_bitv);
 end
 CPD = maximize_params(CPD);
