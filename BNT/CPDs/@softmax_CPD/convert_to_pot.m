@@ -39,7 +39,7 @@ switch pot_type
   ps = domain(1:end-1);
   dps = ps(CPD.dpndx);
   cps = ps(CPD.cpndx);
-  ddom = [dps CPD.self];
+  ddom = [dps; CPD.self];
   cdom = cps;
   pot = cgpot(ddom, cdom, ns, can);   
   
